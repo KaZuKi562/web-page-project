@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drinks Menu</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .drinks-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .drink-card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .drink-card:hover {
+            transform: scale(1.05);
+        }
+
+        .drink-card.highlight {
+            background-color: #ffecec;
+        }
+
+        .drink-details {
+            flex: 1;
+            margin-right: 15px;
+        }
+
+        .drink-details h3 {
+            font-size: 1.2em;
+            margin: 0 0 10px;
+            color: #333;
+        }
+
+        .drink-details p {
+            margin: 5px 0;
+            color: #777;
+        }
+
+        .drink-image {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .drink-image img {
+            width: 80px;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .add-button {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            width: 30px;
+            height: 30px;
+            background-color: #4a148c;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .add-button:hover {
+            background-color: #6a1b9a;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="drinks-grid">
+            <!-- Coke Mismo -->
+            <div class="drink-card highlight">
+                <div class="drink-details">
+                    <h3>COKE MISMO</h3>
+                    <p>₱ 33</p>
+                    <p>300ml</p>
+                </div>
+                <div class="drink-image">
+                    <img src="Pic/cock.jpg" alt="Coke Mismo">
+                    <button class="add-button">+</button>
+                </div>
+            </div>
+
+            <!-- Royal Mismo -->
+            <div class="drink-card">
+                <div class="drink-details">
+                    <h3>ROYAL MISMO</h3>
+                    <p>₱ 33</p>
+                    <p>300ml</p>
+                </div>
+                <div class="drink-image">
+                    <img src="Pic/loyal.jpg" alt="Royal Mismo">
+                    <button class="add-button">+</button>
+                </div>
+            </div>
+
+            <!-- Sprite Mismo -->
+            <div class="drink-card">
+                <div class="drink-details">
+                    <h3>SPRITE MISMO</h3>
+                    <p>₱ 33</p>
+                    <p>300ml</p>
+                </div>
+                <div class="drink-image">
+                    <img src="Pic/sprite.webp" alt="Sprite Mismo">
+                    <button class="add-button">+</button>
+                </div>
+            </div>
+
+            <!-- Bottled Water -->
+            <div class="drink-card">
+                <div class="drink-details">
+                    <h3>BOTTLED WATER</h3>
+                    <p>₱ 33</p>
+                    <p>500ml</p>
+                </div>
+                <div class="drink-image">
+                    <img src="Pic/water.jpg" alt="Bottled Water">
+                    <button class="add-button">+</button>
+                </div>
+            </div>
+
+            <!-- Iced Tea -->
+            <div class="drink-card">
+                <div class="drink-details">
+                    <h3>ICED TEA</h3>
+                    <p>₱ 40</p>
+                    <p>500ml</p>
+                </div>
+                <div class="drink-image">
+                    <img src="Pic/iced tea.jpg" alt="Iced Tea">
+                    <button class="add-button">+</button>
+                </div>
+            </div>
+
+            <!-- Lemonade -->
+            <div class="drink-card">
+                <div class="drink-details">
+                    <h3>LEMONADE</h3>
+                    <p>₱ 45</p>
+                    <p>500ml</p>
+                </div>
+                <div class="drink-image">
+                    <img src="Pic/lemonade.jpg" alt="Lemonade">
+                    <button class="add-button">+</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

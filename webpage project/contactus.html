@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f9f9f9;
+        }
+
+        .container {
+            max-width: 1200px;
+            display: flex;
+            gap: 2rem;
+            padding: 2rem;
+            background-color: #fff;
+        }
+
+        .form-container {
+            flex: 2;
+        }
+
+        .form-container h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .form-container form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .form-row input,
+        .form-row select,
+        textarea {
+            flex: 1;
+            padding: 0.75rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f5dc;
+        }
+
+        textarea {
+            resize: none;
+            height: 100px;
+        }
+
+        .form-row label {
+            margin-bottom: 0.5rem;
+        }
+
+        .submit-button {
+            background-color: #d81b60;
+            color: black;
+            padding: 0.75rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+
+        .submit-button:hover {
+            background-color: #810c36;
+        }
+
+        .info-container {
+            flex: 1;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .info-container h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .info-container a {
+            display: block;
+            margin-top: 0.5rem;
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .info-container a:hover {
+            text-decoration: underline;
+        }
+
+        .social-links {
+            margin-top: 1rem;
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .social-links a {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-color: #007bff;
+            border-radius: 5px;
+            color: white;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .social-links a:hover {
+            background-color: #0056b3;
+        }
+    </style>    
+</head>
+
+<body>
+    <div class="container">
+        <div class="form-container">
+            <h2>Send us a <span style="color: orange;">message</span></h2>
+            <form action="message_sent.html">
+                <div class="form-row">
+                    <div>
+                        <label for="first-name">First Name *</label>
+                        <input type="text" id="first-name" name="first-name" placeholder="First Name" required>
+                    </div>
+                    <div>
+                        <label for="last-name">Last Name *</label>
+                        <input type="text" id="last-name" name="last-name" placeholder="Last Name" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div>
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" placeholder="Email Address" required>
+                    </div>
+                    <div>
+                        <label for="contact-number">Contact Number *</label>
+                        <input type="text" id="contact-number" name="contact-number" placeholder="Contact Number" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <label for="find-us">How did you find us *</label>
+                    <select id="find-us" name="find-us" required>
+                        <option value="social-media">Social Media</option>
+                        <option value="website">Website</option>
+                        <option value="friend">Friend</option>
+                    </select>
+                </div>
+                <div class="form-row">
+                    <label for="subject">Subject *</label>
+                    <select id="subject" name="subject" required>
+                        <option value="general-inquiry">General Inquiry</option>
+                        <option value="support">Support</option>
+                        <option value="feedback">Feedback</option>
+                    </select>
+                </div>
+                <div class="form-row">
+                    <label for="message">Message *</label>
+                    <textarea id="message" name="message" placeholder="Leave us your message here" required></textarea>
+                </div>
+                <div class="form-row">
+                    <button type="submit" class="submit-button">Send message</button>
+                </div>
+            </form>
+        </div>
+        <div class="info-container">
+            <h3>Our Office</h3>
+            <p>1234 Manyakul ave. Dau, Mabalacat, Pampanga</p>
+            <h3>Working Hours</h3>
+            <p>9:00 AM - 7:00 PM<br>Monday - Saturday</p>
+            <h3>Contact</h3>
+            <p><strong>For Franchising</strong><br>+63 919 079 3774<br>cactusco.shawarma.ph</p>
+            <p><strong>For Marketing</strong><br>+63 9932560473<br>marketingsecretary.cactus@gmail.com</p>
+            <div class="social-links">
+                <a href="#" style="background-color: #3b5998;">Facebook</a>
+                <a href="#" style="background-color: #E1306C;">Instagram</a>
+                <a href="#" style="background-color: #1DA1F2;">Twitter</a>
+                <a href="#" style="background-color: #69C9D0;">TikTok</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

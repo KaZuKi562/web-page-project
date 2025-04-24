@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        body {
+            background-color: #eee;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .logo {
+            position: fixed;
+            height: 100px;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: white;
+            z-index: 1000;
+            box-shadow: 0px 10px 58px -16px rgba(0, 0, 0, 0.75);
+            display: flex; /* Use flexbox for horizontal alignment */
+            align-items: center; /* Vertically center items */
+            justify-content: space-between; /* Space between logo and menu */
+            padding: 0 20px; /* Add padding for spacing */
+            box-sizing: border-box; /* Ensure padding does not push content out */
+            overflow: hidden; /* Prevent content overflow */
+        }
+
+        .logo p {
+            font-size: 30px;
+            font-weight: bold;
+            margin: 0;
+            color: black;
+            white-space: nowrap; /* Prevent text from wrapping */
+        }
+
+        .menu {
+            display: flex; /* Ensure menu items are arranged horizontally */
+            gap: 20px; /* Space between menu items */
+            flex-wrap: wrap; /* Allow items to wrap if necessary */
+        }
+
+        .menu a {
+            text-decoration: none; /* Remove underline */
+            color: brown; /* Change link color to brown */
+            font-size: 18px;
+            font-weight: bold;
+            transition: 0.4s ease-in-out;
+        }
+
+        .menu a:hover {
+            color: rgb(171, 171, 171);
+        }
+
+        table {
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 0 60px rgba(0, 0, 0, 0.2);
+            padding: 20px 20px;
+            border-radius: 8px;
+            width: 300px;
+            text-align: center;
+            margin: 50px auto; /* Center the table vertically and horizontally */
+        }
+
+        .input-group {
+            position: relative;
+        }
+
+        .input-group input {
+            width: 95%;
+            background: transparent;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            outline: none;
+            padding: 8px;
+            border-radius: 40px;
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 10px;
+            background: #d81b60;
+            color: rgb(8, 8, 8);
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 40px;
+        }
+
+        .login-btn:hover {
+            background: #7a1037;
+        }
+
+        .input-group i {
+            position: absolute;
+            right: 20px;
+            bottom: 20%;
+            font-size: 20px;
+        }
+
+        .input-group input::placeholder {
+            color: #1f1d1d;
+        }
+
+        p {
+            text-align: center;
+        }
+
+        p a {
+            color: blue;
+        }
+
+        p a:hover {
+            color: darkblue;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="logo">
+        <p>CACTUS CO. Sha-warma</p>
+        <div class="menu">
+            <a href="contactus.html">Contact</a>
+            <a href="aboutus.html">About</a>
+            <a href="hahha.html">Home</a>
+        </div>
+    </div>
+    
+    <form action="hahha.html">
+        <table border="1" align="center">
+            <br><br>
+            <p style="color: white;"> sasasas</p>
+            <hr border="10px">
+            <br><br><br><br>
+            
+            <tr>
+                <td colspan="2" align="center"><h2>Login</h2></td>
+            </tr>
+            <tr>
+                <td class="input-group">
+                    <input type="text" id="username" name="username" placeholder="Username" required>
+                    <i class='bx bxs-user'></i>
+                </td>
+            </tr>
+            <tr>
+                <td class="input-group">
+                    <input type="password" id="password" name="password" placeholder="Password" required>
+                    <i class='bx bxs-lock-alt'></i>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="submit" class="login-btn" value="Login">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <p>Don't have an account yet? <a href="REGISTER.html">Sign-Up</a></p>
+              </td>
+            </tr>
+         </table>
+         <p>
+             <i>Hello and welcome to our fan page where we do stuff we don't understand, but we are currently under construction, meaning we still haven't built anything yet, YEY!<br>
+             For more coding, please</i>
+             <a href="https://www.canva.com/design/DAGbfJVVcrA/hUe8GNJXKpAfSVfV-nkI0g/view?utm_content=DAGbfJVVcrA&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hd684333924" title="WEBPAGE DESIGN">CLICK HERE</a>
+         </p>
+    </form>     
+
+</body>
+</html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sha*</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        .categories ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 10px 0;
+        }
+
+        .categories ul li {
+            display: inline;
+        }
+
+        .categories ul li a {
+            text-decoration: none;
+            font-weight: bold;
+            color: #4a148c;
+            padding: 10px 20px;
+            border: 2px solid #4a148c;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .categories ul li a:hover {
+            background-color: #4a148c;
+            color: white;
+        }
+
+        .menu-item {
+            display: flex;
+            align-items: center;
+            margin: 20px 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .menu-item img {
+            width: 100px;
+            height: 100px;
+            border-radius: 8px;
+            margin-right: 20px;
+        }
+
+        .menu-content {
+            flex: 1;
+        }
+
+        .menu-item:hover {
+            transform: scale(1.05);
+        }
+
+        .menu-content h3 {
+            margin: 0;
+            font-size: 1.2em;
+        }
+
+        .menu-content p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <p class="active"><b>CACTUS CO. Sha-warma</b></p>
+        <a href="" class="log">Sign in</a>
+        <a href="" class="log">Log in</a>
+    </div>
+
+    <div class="logo">
+        <p><b><u>Mabalacat Pampanga</u></b></p>
+        <img src="Pic/Cactus Co.png" alt="">
+        <h1>Gusto mo ba ng sha-?</h1>
+        <h1>Yung masarap at good item?</h1>
+        <h1>Ano pang hinihintay mo?</h1>
+        <h1>Bumili ka na ng Sha-warma</h1>
+    </div>
+
+    <!-- Categories -->
+    <div class="categories">
+        <ul>
+            <li>
+                <a href="#Popular" class="nav-link">Popular</a>
+            </li>
+            <li>
+                <a href="#Buy1" class="nav-link">Buy one get one</a>
+            </li>
+            <li>
+                <a href="#Mains" class="nav-link">Main Dish</a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Popular Section -->
+    <div class="menu-section" id="Popular">
+        <div class="section-header">
+            <h2 class="section-title">🔥 Popular</h2>
+            <p class="section-sub">Most ordered right now</p>
+        </div>
+
+        <a href="L-Beef_Sha.html">
+            <div class="menu-item">
+                <img src="Pic/beef.jpg" alt="Beef Shawarma">
+                <div class="menu-content">
+                    <h3>Large Beef Shawarma</h3>
+                    <p class="menu-price">From ₱127</p>
+                    <p class="menu-des">Buy 1 for the price of 2 and get 1 extra <br>FOR FREE</p>
+                </div>
+            </div>
+        </a>
+
+        <a href="largechicken.html">
+            <div class="menu-item">
+                <img src="Pic/chicken.jpg" alt="Chicken Shawarma">
+                <div class="menu-content">
+                    <h3>Large Chicken Shawarma</h3>
+                    <p class="menu-price">From ₱127</p>
+                    <p class="menu-des">Buy 1 for the price of 2 and get 1 extra <br>FOR FREE</p>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <!-- Buy 1 Get 1 Section -->
+    <div class="menu-section" id="Buy1">
+        <div class="section-header">
+            <h2 class="section-title">Buy 1 Get 1</h2>
+        </div>
+
+        <a href="L-Beef_Sha.html">
+            <div class="menu-item">
+                <img src="Pic/beef.jpg" alt="Beef Shawarma">
+                <div class="menu-content">
+                    <h3>Large Beef Shawarma</h3>
+                    <p class="menu-price">From ₱127</p>
+                    <p class="menu-des">Buy 1 for the price of 2 and get 1 extra <br>FOR FREE</p>
+                </div>
+            </div>
+        </a>
+
+        <a href="largechicken.html">
+            <div class="menu-item">
+                <img src="Pic/chicken.jpg" alt="Chicken Shawarma">
+                <div class="menu-content">
+                    <h3>Large Chicken Shawarma</h3>
+                    <p class="menu-price">From ₱127</p>
+                    <p class="menu-des">Buy 1 for the price of 2 and get 1 extra <br>FOR FREE</p>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <!-- Main Dish Section -->
+    <div class="menu-section" id="Mains">
+        <div class="section-header">
+            <h2 class="section-title">Main Dish</h2>
+        </div>
+
+        <a href="beefnachos.html">
+            <div class="menu-item">
+                <img src="Pic/Beef shawarma w nachos.jpg" alt="Beef Shawarma with Nachos">
+                <div class="menu-content">
+                    <h3>Large Beef Shawarma with Nachos</h3>
+                    <p class="menu-price">From ₱269</p>
+                    <p class="menu-des">2 Large beef shawarma wrap with nachos & 1 soda</p>
+                </div>
+            </div>
+        </a>
+
+        <a href="chickennachos.html">
+            <div class="menu-item">
+                <img src="Pic/chicken shawarma w nachos.jpg" alt="Chicken Shawarma with Nachos">
+                <div class="menu-content">
+                    <h3>Large Chicken Shawarma with Nachos</h3>
+                    <p class="menu-price">From ₱269</p>
+                    <p class="menu-des">2 Large chicken shawarma wrap with nachos & 1 soda</p>
+                </div>
+            </div>
+        </a>
+    </div>
+</body>
+</html>

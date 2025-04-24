@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sha*</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <script>
+        const cartItems = [];
+        let quantity = 1;
+        let totalPrice = 0;
+
+
+        function openModal(itemName, itemPrice, itemImage) {
+            document.getElementById("modalItemName").textContent = itemName;
+            document.getElementById("modalItemPrice").textContent = `₱ ${itemPrice}`;
+            document.getElementById("modalItemImage").src = itemImage;
+            document.getElementById("quantityValue").textContent = quantity;
+            document.getElementById("cartModal").style.display = "flex";
+        }
+
+        function closeModal() {
+            document.getElementById("cartModal").style.display = "none";
+        }
+
+        function increaseQuantity() {
+            quantity++;
+            document.getElementById("quantityValue").textContent = quantity;
+        }
+
+        function decreaseQuantity() {
+            if (quantity > 1) {
+                quantity--;
+                document.getElementById("quantityValue").textContent = quantity;
+            }
+        }
+
+        function openSideCart() {
+            document.getElementById("sideCart").style.display = "block";
+        }
+
+        function closeSideCart() {
+            document.getElementById("sideCart").style.display = "none";
+        }
+
+        function addToCart(itemName, itemPrice, itemImage) {
+            const existingItem = cartItems.find(item => item.name === itemName);
+            if (existingItem) {
+                existingItem.quantity += quantity;
+            } else {
+                cartItems.push({
+                    name: itemName,
+                    price: itemPrice,
+                    image: itemImage,
+                    quantity: quantity
+                });
+            }
+            quantity = 1; // Reset quantity after adding to cart
+            updateSideCart();
+            closeModal();
+            openSideCart();
+        }
+
+        function updateSideCart() {
+            const cartContainer = document.getElementById("cartItems");
+            cartContainer.innerHTML = "";
+            totalPrice = 0;
+
+            cartItems.forEach(item => {
+                totalPrice += item.price * item.quantity;
+
+                const cartItem = document.createElement("div");
+                cartItem.classList.add("cart-item");
+
+                cartItem.innerHTML = `
+                    <img src="${item.image}" alt="${item.name}">
+                    <div class="cart-item-details">
+                        <h4>${item.name}</h4>
+                        <p>₱ ${item.price}</p>
+                    </div>
+                    <div class="cart-item-quantity">
+                        <button onclick="decreaseCartQuantity('${item.name}')">-</button>
+                        <span>${item.quantity}</span>
+                        <button onclick="increaseCartQuantity('${item.name}')">+</button>
+                    </div>
+                `;
+
+                cartContainer.appendChild(cartItem);
+            });
+
+            document.getElementById("totalPrice").textContent = `₱ ${totalPrice}`;
+        }
+
+        function submitOrder() {
+            const receiptContainer = document.getElementById("receiptContainer");
+            const receiptItems = document.getElementById("receiptItems");
+            const receiptTotal = document.getElementById("receiptTotal");
+            receiptItems.innerHTML = "";
+
+            cartItems.forEach(item => {
+                const receiptItem = document.createElement("div");
+                receiptItem.classList.add("item");
+                receiptItem.innerHTML = `
+                    <span>${item.quantity} x ${item.name}</span>
+                    <span>₱ ${item.price * item.quantity}</span>
+                `;
+                receiptItems.appendChild(receiptItem);
+            });
+
+            receiptTotal.textContent = `₱ ${totalPrice}.00`;
+            receiptContainer.style.display = "flex";
+        }
+
+        function closeReceipt() {
+            document.getElementById("receiptContainer").style.display = "none";
+            cartItems.length = 0; // Clear the cart
+            closeSideCart();
+        }
+    </script>
+</head>
+
+<body>
+    <div class="navbar">
+        <p class="active"><b>CACTUS CO. Sha-warma</b></p>
+    </div>
+
+    <div class="logo">
+        <p><b><u>Mabalacat Pampanga</u></b></p>
+        <img src="Pic/Cactus Co.png" alt="">
+        <h1>Gusto mo ba ng sha-?</h1>
+        <h1>Yung masarap at good item?</h1>
+        <h1>Ano pang hinihintay mo?</h1>
+        <h1>Bumili ka na ng Sha-warma</h1>
+    </div>
+
+    <div class="menu-section" id="Popular">
+        <div class="section-header">
+            <h2 class="section-title">🔥 Menu</h2>
+        </div>
+
+        <!-- Menu Items -->
+        <div class="menu-item">
+            <img src="Pic/beef.jpg" alt="Beef Shawarma">
+            <div class="menu-content">
+                <h3>Large Beef Shawarma</h3>
+                <p class="menu-price">From ₱127</p>
+                <p class="menu-des">Buy 1 for the price of 2 and get 1 extra FOR FREE</p>
+                <button onclick="openModal('Large Beef Shawarma', 127, 'Pic/beef.jpg')">Order Now</button>
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <img src="Pic/chicken.jpg" alt="Chicken Shawarma">
+            <div class="menu-content">
+                <h3>Large Chicken Shawarma</h3>
+                <p class="menu-price">From ₱127</p>
+                <p class="menu-des">Buy 1 for the price of 2 and get 1 extra FOR FREE</p>
+                <button onclick="openModal('Large Chicken Shawarma', 127, 'Pic/chicken.jpg')">Order Now</button>
+            </div>
+        </div>
+
+        <!-- Additional Menu Items -->
+        <div class="menu-item">
+            <img src="Pic/beef sha- rice bowl.jpg" alt="Beef Shawarma Rice Bowl">
+            <div class="menu-content">
+                <h3>Beef Shawarma Rice Bowl</h3>
+                <p class="menu-price">From ₱155</p>
+                <p class="menu-des">Buy 1 get 1</p>
+                <button onclick="openModal('Beef Shawarma Rice Bowl', 155, 'Pic/beef sha- rice bowl.jpg')">Order Now</button>
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <img src="Pic/3 large beef.jpg" alt="3 Large Beef Shawarma">
+            <div class="menu-content">
+                <h3>3 Large Beef Shawarma</h3>
+                <p class="menu-price">From ₱190</p>
+                <p class="menu-des">3 Large Beef Shawarma wraps</p>
+                <button onclick="openModal('3 Large Beef Shawarma', 190, 'Pic/3 large beef.jpg')">Order Now</button>
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <img src="Pic/beef shawarma rice.jpg" alt="Beef Shawarma Rice">
+            <div class="menu-content">
+                <h3>Beef Shawarma Rice</h3>
+                <p class="menu-price">From ₱129</p>
+                <p class="menu-des">Beef shawarma served with rice</p>
+                <button onclick="openModal('Beef Shawarma Rice', 129, 'Pic/beef shawarma rice.jpg')">Order Now</button>
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <img src="Pic/Beef shawarma w nachos.jpg" alt="Large Beef Shawarma with Nachos">
+            <div class="menu-content">
+                <h3>Large Beef Shawarma with Nachos</h3>
+                <p class="menu-price">From ₱269</p>
+                <p class="menu-des">2 Large Beef Shawarma wraps with nachos & 1 soda</p>
+                <button onclick="openModal('Large Beef Shawarma with Nachos', 269, 'Pic/Beef shawarma w nachos.jpg')">Order Now</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Add to Cart -->
+    <div id="cartModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalItemName"></h3>
+                <button onclick="closeModal()">×</button>
+            </div>
+            <img id="modalItemImage" src="" alt="Item Image">
+            <p id="modalItemPrice"></p>
+            <div class="modal-footer">
+                <div class="quantity-selector">
+                    <button onclick="decreaseQuantity()">-</button>
+                    <span id="quantityValue">1</span>
+                    <button onclick="increaseQuantity()">+</button>
+                </div>
+                <button class="add-to-cart" onclick="addToCart(document.getElementById('modalItemName').textContent, parseInt(document.getElementById('modalItemPrice').textContent.slice(2)), document.getElementById('modalItemImage').src)">Add to cart</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Side Cart -->
+    <div id="sideCart" class="side-cart">
+        <div class="side-cart-header">
+            <h3>Your Cart</h3>
+            <button onclick="closeSideCart()">×</button>
+        </div>
+        <div id="cartItems"></div>
+        <div class="cart-footer">
+            <p>Total: <span id="totalPrice">₱ 0</span></p>
+            <button class="checkout-button" onclick="submitOrder()">Review payment and address</button>
+        </div>
+    </div>
+
+    <!-- Receipt -->
+    <div id="receiptContainer" class="modal">
+        <div class="modal-content receipt">
+            <div class="header">Your order from</div>
+            <div class="sub-header">Shawarma Shack - Puregold Dau</div>
+            <div id="receiptItems"></div>
+            <div class="line"></div>
+            <div class="item">
+                <span>Subtotal</span>
+                <span>₱ <span id="totalPriceSubtotal"></span></span>
+            </div>
+            <div class="item">
+                <span>Standard delivery</span>
+                <span>Free</span>
+            </div>
+            <div class="total">
+                Total: <span id="receiptTotal"></span>
+            </div>
+            <button class="okay-button" onclick="closeReceipt()">Okay</button>
+        </div>
+    </div>
+
+    
+</body>
+</html>
